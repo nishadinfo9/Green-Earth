@@ -75,49 +75,31 @@
       <div class="left flex flex-col min-w-60 min-h-full rounded-md">
         <ul id="sidebar" class="space-y-2 font-medium px-5">
           <h2 class="text-2xl font-bold mb-5">Categories</h2>
-          <li>
-            <button
-              class="flex items-center cursor-pointer w-full p-2 bg-green-500 py-2 text-black text-left rounded-lg hover:bg-green-600 group"
-            >
-              Dashboard
-            </button>
-          </li>
         </ul>
       </div>
-      <div id="card" class="middle grid grid-cols-3 gap-5">
-       
-      </div>
-      <div class="right w-60 px-3 bg-slate-200 rounded-md">
-        <ul class="space-y-3">
+      <div id="card" class="middle grid grid-cols-3 gap-5"></div>
+      <div class="right w-60 px-3 bg-slate-100 rounded-md">
+        <ul id="cartContainer" class="space-y-3">
           <h2 class="font-bold text-xl">Your Cart</h2>
-          <li
+          <!-- <li
             class="flex items-center justify-between rounded-lg p-2 bg-[#F0FDF4]"
           >
             <div class="space-y-2">
               <div class="font-semibold">Mango Tree</div>
               <div class="flex">
-                <p>$<span class="">500</span></p>
-                <p class="flex gap-2 pl-2">x<span>1</span></p>
+                <p>$<span id="originalPrice">500</span></p>
+                <p class="flex gap-2 pl-2">x<span id="qty">1</span></p>
               </div>
             </div>
             <div>X</div>
-          </li>
-          <li
-            class="flex items-center justify-between rounded-lg p-2 bg-[#F0FDF4]"
-          >
-            <div class="space-y-2">
-              <div class="font-semibold">Mango Tree</div>
-              <div class="flex">
-                <p>$<span class="">500</span></p>
-                <p class="flex gap-2 pl-2">x<span>1</span></p>
-              </div>
-            </div>
-            <div>X</div>
-          </li>
+          </li> -->
         </ul>
         <div class="flex items-center justify-between mt-5 font-semibold">
           <div>Total:</div>
-          <div><span>$</span> 1000</div>
+          <div class="flex">
+            <span>৳</span>
+            <div id="total">0</div>
+          </div>
         </div>
       </div>
     </section>
@@ -144,42 +126,75 @@
     </section>
 
     <!-- Our Impact Section  -->
-     <section class="py-10 px-10">
-        <h2 class="font-bold text-3xl text-center my-10">Our Impact</h2>
-        <div class="flex items-center justify-evenly">
-            <div class="w-[350px] h-[150px] bg-white rounded-lg flex flex-col items-center justify-center gap-2">
-                <h3 class="font-bold text-3xl">500K+</h3>
-                <p class="font-medium">Trees Planted</p>
-            </div>
-            <div class="w-[350px] h-[150px] bg-white rounded-lg flex flex-col items-center justify-center gap-2">
-                <h3 class="font-bold text-3xl">120+</h3>
-                <p class="font-medium">Communities Involved</p>
-            </div>
-            <div class="w-[350px] h-[150px] bg-white rounded-lg flex flex-col items-center justify-center gap-2">
-                <h3 class="font-bold text-3xl">30+</h3>
-                <p class="font-medium">Countries Reached</p>
-            </div>
+    <section class="py-10 px-10">
+      <h2 class="font-bold text-3xl text-center my-10">Our Impact</h2>
+      <div class="flex items-center justify-evenly">
+        <div
+          class="w-[350px] h-[150px] bg-white rounded-lg flex flex-col items-center justify-center gap-2"
+        >
+          <h3 class="font-bold text-3xl">500K+</h3>
+          <p class="font-medium">Trees Planted</p>
         </div>
-     </section>
+        <div
+          class="w-[350px] h-[150px] bg-white rounded-lg flex flex-col items-center justify-center gap-2"
+        >
+          <h3 class="font-bold text-3xl">120+</h3>
+          <p class="font-medium">Communities Involved</p>
+        </div>
+        <div
+          class="w-[350px] h-[150px] bg-white rounded-lg flex flex-col items-center justify-center gap-2"
+        >
+          <h3 class="font-bold text-3xl">30+</h3>
+          <p class="font-medium">Countries Reached</p>
+        </div>
+      </div>
+    </section>
 
-     <!-- form section  -->
-      <section class="bg-[#166534] w-full p-10">
-        <h2 class="my-10 font-bold text-3xl text-center text-white">Plant a Tree Today</h2>
-        <form class="my-15 p-5 rounded-md w-[400px] mx-auto flex flex-col items-center justify-center gap-5 bg-[#15803D]">
-            <input class="w-full bg-white border-none p-2 rounded-md outline-none" type="text" placeholder="Your Name">
-            <input class="w-full bg-white border-none p-2 rounded-md outline-none" type="email" placeholder="Your Email Address">
-            <select class="w-full bg-white border-none p-2 rounded-md outline-none" name="Number of Trees" id="">
-                <option value="Number of Trees">Number of Trees</option>
-                <option value="Number of Trees">Trees Cofee</option>
-            </select>
-            <button class="w-full btn btn-warning rounded-full">Donate Now</button>
-        </form>
-      </section>
+    <!-- form section  -->
+    <section class="bg-[#166534] w-full p-10">
+      <h2 class="my-10 font-bold text-3xl text-center text-white">
+        Plant a Tree Today
+      </h2>
+      <form
+        class="my-15 p-5 rounded-md w-[400px] mx-auto flex flex-col items-center justify-center gap-5 bg-[#15803D]"
+      >
+        <input
+          class="w-full bg-white border-none p-2 rounded-md outline-none"
+          type="text"
+          placeholder="Your Name"
+        />
+        <input
+          class="w-full bg-white border-none p-2 rounded-md outline-none"
+          type="email"
+          placeholder="Your Email Address"
+        />
+        <select
+          class="w-full bg-white border-none p-2 rounded-md outline-none"
+          name="Number of Trees"
+          id=""
+        >
+          <option value="Number of Trees">Number of Trees</option>
+          <option value="Number of Trees">Trees Cofee</option>
+        </select>
+        <button class="w-full btn btn-warning rounded-full">Donate Now</button>
+      </form>
+    </section>
 
-      <!-- footer section  -->
-       <footer class="text-center bg-[#14532D] py-5 text-white">
-        &copy; 2025 Green Earth. All Rights Reserved.
-       </footer>
-       <script src="app.js"></script>
+    <!-- popup -->
+
+    <dialog id="pop" class="modal">
+      <div class="modal-box">
+        <div>hi</div>
+        <div class="modal-action ">
+          
+        </div>
+      </div>
+    </dialog>
+
+    <!-- footer section  -->
+    <footer class="text-center bg-[#14532D] py-5 text-white">
+      &copy; 2025 Green Earth. All Rights Reserved.
+    </footer>
+    <script src="app.js"></script>
   </body>
 </html>
