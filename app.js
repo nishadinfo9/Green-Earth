@@ -3,8 +3,8 @@ const api = async (url) => {
   return await res.json();
 };
 
-const calculate = (input)=>{
-const cartOriginalPrice = document.querySelectorAll(input);
+const calculate = (input) => {
+  const cartOriginalPrice = document.querySelectorAll(input);
   const total = document.getElementById("total");
 
   let final = 0;
@@ -14,7 +14,7 @@ const cartOriginalPrice = document.querySelectorAll(input);
     final += price;
   }
   total.innerHTML = final;
-}
+};
 
 const allCategory = async () => {
   const sidebar = document.getElementById("sidebar");
@@ -55,8 +55,8 @@ const createCard = (data) => {
         <div onclick="openModal(${product.id})" class="h-[180px] w-full cursor-pointer overflow-hidden rounded-lg">
           <img 
             class="w-full h-full object-cover" 
-            src=''
-            // product.image
+            src=${product?.image}
+            
             alt="${product.name}" 
           />
         </div>
@@ -87,8 +87,9 @@ const createCard = (data) => {
 };
 
 const cartHandler = async (id) => {
-
-  const data = await api(`https://openapi.programming-hero.com/api/plant/${id}`)
+  const data = await api(
+    `https://openapi.programming-hero.com/api/plant/${id}`
+  );
 
   const cartContainer = document.getElementById("cartContainer");
   const li = document.createElement("li");
@@ -108,15 +109,15 @@ const cartHandler = async (id) => {
   `;
   cartContainer.appendChild(li);
 
-calculate('.originalPrice')
+  calculate(".originalPrice");
 };
 
-const closeCart = (id)=>{
-  const cart = document.getElementById(`cart-${id}`)
-  cart.remove()
+const closeCart = (id) => {
+  const cart = document.getElementById(`cart-${id}`);
+  cart.remove();
 
-calculate('.originalPrice')
-}
+  calculate(".originalPrice");
+};
 
 const openModal = async (id) => {
   const pop = document.getElementById("pop");
@@ -174,4 +175,3 @@ const clickCategory = async (id) => {
   const btnId = document.getElementById(`btn-${id}`);
   btnId.classList.add("bg-green-600");
 };
-
