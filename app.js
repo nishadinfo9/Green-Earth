@@ -95,16 +95,16 @@ const cartHandler = async (id) => {
   const li = document.createElement("li");
   li.innerHTML = `
   <li id=cart-${data.plants.id}
-            class="carts flex items-center justify-between rounded-lg p-2 bg-[#F0FDF4]"
+            class="carts flex flex-col sm:flex-row sm:items-center sm:justify-between rounded-lg p-3 bg-[#F0FDF4] gap-2 sm:gap-0"
           >
             <div class="space-y-2">
-              <div class="font-semibold">${data.plants.name}</div>
-              <div class="flex">
+              <div class="font-semibold text-sm sm:text-base">${data.plants.name}</div>
+              <div class="flex text-xs sm:text-sm">
                 <p>৳<span class="originalPrice">${data.plants.price}</span></p>
-                <p class="flex gap-2 pl-2">x<span class="qty">1</span></p>
+                <p class="flex gap-1 sm:gap-2 pl-2">x<span class="qty">1</span></p>
               </div>
             </div>
-            <button onclick="closeCart(${data.plants.id})" class="cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+            <button onclick="closeCart(${data.plants.id})" class="cursor-pointer self-end sm:self-center text-red-500 hover:text-red-700"><i class="fa-solid fa-xmark"></i></button>
           </li>
   `;
   cartContainer.appendChild(li);
