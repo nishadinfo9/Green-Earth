@@ -1,5 +1,4 @@
 1) What is the difference between var, let, and const?
-
 Javascript including 3 type of variable
 1. var
 2. let
@@ -29,9 +28,11 @@ example: const obj = {name: 'nishad', age: 21}
 access: obj.name or obj.age
 
 destructuring
+
 const obj = {name: 'nishad', age: 21}
 const {name, age} = obj
 access: name or age
+
 8) Explain template literals in ES6. How are they different from string concatenation?
 another most common uses syntax is template literals this is powerful compare to simple string ""
 template literals make to write string and javascript code 
